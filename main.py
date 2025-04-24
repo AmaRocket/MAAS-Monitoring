@@ -3,14 +3,17 @@ import time
 import uuid
 
 import requests
+from dotenv import load_dotenv
 from flask import Flask, Response
+
+load_dotenv()
 
 app = Flask(__name__)
 
 API_KEY = os.getenv("MAAS_API_KEY")
 if not API_KEY:
     print("MAAS_API_KEY environment variable is not set")
-API_URL = os.getenv("MAAS_API_KEY")
+API_URL = os.getenv("API_URL")
 if not API_URL:
     print("MAAS_API_URL environment variable is not set")
 
@@ -60,6 +63,7 @@ def metrics():
         status_message = machine.get("status_message")
         power_type = machine.get("power_type")
         zone_name = machine.get("zone", {}).get("name", "unknown")
+        storage_test_status_name = machine.get("storage_test_status_name")
 
         status_message = str(status_message).strip()
         power_type_lower = str(power_type or "").lower()
@@ -74,7 +78,7 @@ def metrics():
             return s.replace('"', '\\"')
 
         output.append(
-            f'maas_machine_status{{hostname="{escape(hostname)}",power_status="{escape(power_status)}",zone="{escape(zone_name)}"}} 1'
+            f'maas_machine_status{{hostname="{escape(hostname)}",power_status="{escape(power_status)}", storage_test_status_name="{escape(storage_test_status_name)}", zone="{escape(zone_name)}"}} 1'
         )
         output.append(
             f'maas_machine_power_state{{hostname="{hostname}",power="{power}", status_message="{status_message}", power_type="{power_type}"}} 1'
