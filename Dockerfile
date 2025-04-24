@@ -17,4 +17,4 @@ COPY . /app
 
 EXPOSE 9200
 
-CMD ["python", "maas_api_exporter.py"]
+CMD ["python", "main.py"]
