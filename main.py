@@ -13,7 +13,7 @@ app = Flask(__name__)
 API_KEY = os.getenv("MAAS_API_KEY")
 if not API_KEY:
     print("MAAS_API_KEY environment variable is not set")
-API_URL = os.getenv("API_URL")
+API_URL = os.getenv("MAAS_API_URL")
 if not API_URL:
     print("MAAS_API_URL environment variable is not set")
 
