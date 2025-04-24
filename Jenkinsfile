@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_PASS = credentials('docker-hub-password')
         DOCKER_IMAGE = 'amarocket/maas_api_metrics_exporter'
-        DOCKER_SERVICE = "maas_prometheus_metrics_adapter_service"
+        DOCKER_SERVICE = "maas_api_metrics_exporter"
         DOCKER_USER = credentials('docker-hub-username')
         LOG_FILE = "/var/log/docker_auto_update.log"
         MAAS_API_KEY = credentials('maas-api-key')
