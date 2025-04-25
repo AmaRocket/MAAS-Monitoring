@@ -70,7 +70,7 @@ def metrics():
 
         ignore_errors_if_power_ok = ["webhook", "ipmi"]
 
-        if power in ["on", "off"] and power_type_lower in ignore_errors_if_power_ok:
+        if power in "on" and power_type_lower in ignore_errors_if_power_ok:
             status_message = ""
 
         # Clean up for Prometheus labels
