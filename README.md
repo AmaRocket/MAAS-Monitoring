@@ -36,3 +36,5 @@ maas_machine_power_state{hostname="black14",power="off",status_message="",power_
 	•	The exporter uses OAuth 1.0 PLAINTEXT auth (same as MAAS CLI)
 	•	Machine list output is compatible with both paginated and flat MAAS responses
 
+Example GRAFANA output: (this exporter + MAAS exporter + snmp exporter)
+![img_1.png](img_1.png)
