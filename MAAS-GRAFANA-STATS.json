@@ -239,6 +239,7 @@
           "color": {
             "mode": "thresholds"
           },
+          "displayName": "Humidity",
           "fieldMinMax": true,
           "mappings": [],
           "thresholds": {
@@ -256,17 +257,118 @@
                 "value": 60
               }
             ]
-          }
+          },
+          "unit": "humidity"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
+        "h": 6,
         "w": 5,
         "x": 19,
         "y": 0
       },
       "id": 5,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": true,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "12.0.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "fejsiskpaspvkb"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "tunnel_temperature_celsius",
+          "format": "heatmap",
+          "fullMetaSearch": false,
+          "hide": true,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "Temperature",
+          "range": false,
+          "refId": "A",
+          "useBackend": false
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "fejsiskpaspvkb"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "tunnel_humidity_percent",
+          "format": "heatmap",
+          "fullMetaSearch": false,
+          "hide": false,
+          "includeNullMetadata": true,
+          "instant": true,
+          "legendFormat": "Humidity",
+          "range": false,
+          "refId": "B",
+          "useBackend": false
+        }
+      ],
+      "title": "SGG01.U3.001 RH",
+      "transparent": true,
+      "type": "gauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aepxqzkili9z4f"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "displayName": "Temperature",
+          "fieldMinMax": true,
+          "mappings": [],
+          "thresholds": {
+            "mode": "percentage",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "orange",
+                "value": 25
+              },
+              {
+                "color": "red",
+                "value": 30
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 5,
+        "x": 19,
+        "y": 6
+      },
+      "id": 13,
       "options": {
         "minVizHeight": 75,
         "minVizWidth": 75,
@@ -314,7 +416,7 @@
           "expr": "tunnel_humidity_percent",
           "format": "heatmap",
           "fullMetaSearch": false,
-          "hide": false,
+          "hide": true,
           "includeNullMetadata": true,
           "instant": true,
           "legendFormat": "Humidity",
@@ -448,10 +550,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
+        "h": 9,
         "w": 5,
         "x": 19,
-        "y": 9
+        "y": 12
       },
       "id": 7,
       "options": {
@@ -956,10 +1058,10 @@
         ]
       },
       "gridPos": {
-        "h": 9,
+        "h": 7,
         "w": 5,
         "x": 19,
-        "y": 19
+        "y": 21
       },
       "id": 1,
       "options": {
@@ -1054,5 +1156,5 @@
   "timezone": "browser",
   "title": "MAAS STATS",
   "uid": "eejsjlujx454wd",
-  "version": 19
+  "version": 23
 }
