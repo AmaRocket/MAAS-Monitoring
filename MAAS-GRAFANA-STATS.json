@@ -213,11 +213,14 @@
         {
           "disableTextWrap": false,
           "editorMode": "code",
+          "exemplar": false,
           "expr": "(node_memory_MemAvailable_bytes * 100)/ 1024",
+          "format": "table",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
-          "legendFormat": "__auto",
-          "range": true,
+          "instant": true,
+          "legendFormat": "{{label_name}}",
+          "range": false,
           "refId": "A",
           "useBackend": false
         }
@@ -351,8 +354,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
-        "w": 2,
+        "h": 5,
+        "w": 3,
         "x": 16,
         "y": 9
       },
@@ -446,8 +449,8 @@
       },
       "gridPos": {
         "h": 10,
-        "w": 4,
-        "x": 18,
+        "w": 5,
+        "x": 19,
         "y": 9
       },
       "id": 7,
@@ -564,10 +567,10 @@
         ]
       },
       "gridPos": {
-        "h": 10,
-        "w": 2,
-        "x": 22,
-        "y": 9
+        "h": 5,
+        "w": 3,
+        "x": 16,
+        "y": 14
       },
       "id": 8,
       "options": {
@@ -1051,5 +1054,5 @@
   "timezone": "browser",
   "title": "MAAS STATS",
   "uid": "eejsjlujx454wd",
-  "version": 17
+  "version": 19
 }
