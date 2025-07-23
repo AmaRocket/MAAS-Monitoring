@@ -260,7 +260,15 @@
           },
           "unit": "humidity"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "/.*/"
+            },
+            "properties": []
+          }
+        ]
       },
       "gridPos": {
         "h": 6,
@@ -1149,12 +1157,12 @@
     ]
   },
   "time": {
-    "from": "now",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "MAAS STATS",
   "uid": "eejsjlujx454wd",
-  "version": 23
+  "version": 24
 }
